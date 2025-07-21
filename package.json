@@ -17,6 +17,7 @@
     "vue-router": "^4.5.1"
   },
   "devDependencies": {
+    "globals": "^16.3.0",
     "typescript": "^5.8.3"
   }
 }
