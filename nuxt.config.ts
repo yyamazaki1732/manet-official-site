@@ -10,5 +10,6 @@ export default defineNuxtConfig({
   dir: {
     pages: '../src/app/routes',
     layouts: '../src/app/layouts'
-  }
+  },
+  modules: ['@nuxt/eslint']
 })
