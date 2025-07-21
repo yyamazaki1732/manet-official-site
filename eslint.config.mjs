@@ -1,6 +1,13 @@
 // @ts-check
 import withNuxt from './.nuxt/eslint.config.mjs'
+import stylistic from '@stylistic/eslint-plugin'
 
 export default withNuxt(
-  // Your custom configs here
+  {
+    rules: {
+      ...stylistic.configs['recommended'].rules,
+      'vue/multi-word-component-names': 'off',
+      'vue/html-indent': ['error', 4],
+    },
+  },
 )
