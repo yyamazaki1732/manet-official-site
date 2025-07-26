@@ -1,7 +1,11 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+
+import tailwindcss from '@tailwindcss/vite'
+
 export default defineNuxtConfig({
   modules: ['@nuxt/eslint'],
   devtools: { enabled: true },
+  css: ['@/features/style/tailwindcss.css'],
   dir: {
     pages: '../src/app/routes',
     layouts: '../src/app/layouts',
@@ -12,6 +16,11 @@ export default defineNuxtConfig({
     '#shared': '../src/shared',
   },
   compatibilityDate: '2025-07-15',
+  vite: {
+    plugins: [
+      tailwindcss(),
+    ],
+  },
   eslint: {
     config: {
       stylistic: true,
