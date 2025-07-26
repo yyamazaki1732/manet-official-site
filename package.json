@@ -9,7 +9,10 @@
     "lint:fix": "eslint . --ext .js,.ts,.vue --fix",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare" ,
+    "prefetch": "node prefetch/index.js",
+    "generate:types": "./scripts/generate-types.sh",
+    "kuroco:fetch": "pnpm run prefetch && pnpm run generate:types"
   },
   "dependencies": {
     "@nuxt/eslint": "1.6.0",
