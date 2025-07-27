@@ -5,13 +5,29 @@
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
+    "lint": "eslint . --ext .js,.ts,.vue",
+    "lint:fix": "eslint . --ext .js,.ts,.vue --fix",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "prefetch": "node ./src/entities/api/scripts/prefetch.js",
+    "generate:types": "./src/entities/api/scripts/generate-types.sh",
+    "api:fetch": "pnpm run prefetch && pnpm run generate:types"
   },
   "dependencies": {
+    "@nuxt/eslint": "1.6.0",
+    "@tailwindcss/vite": "^4.1.11",
+    "eslint": "^9.31.0",
     "nuxt": "^4.0.0",
+    "tailwindcss": "^4.1.11",
     "vue": "^3.5.17",
     "vue-router": "^4.5.1"
+  },
+  "devDependencies": {
+    "@stylistic/eslint-plugin": "^5.2.0",
+    "dotenv": "^17.2.1",
+    "globals": "^16.3.0",
+    "quicktype": "23.2.6",
+    "typescript": "^5.8.3"
   }
 }
