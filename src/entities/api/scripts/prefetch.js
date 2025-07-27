@@ -4,20 +4,17 @@ import path from 'path'
 import { fileURLToPath } from 'url'
 import dotenv from 'dotenv'
 
-// 環境変数の読み込み
 dotenv.config()
 const ROOT_URL = process.env.NUXT_PUBLIC_API_BASE
 
-// ファイルパスの設定
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const EXPORT_PATH = path.join(
   __dirname,
   '..',
-  'assets',
-  'data',
+  '..',
+  '/api/data',
 )
 
-// ② 対応言語とエンドポイントを定義 → 拡張構造で準備
 const LANGS = [
   'ja',
   'en',
@@ -35,7 +32,6 @@ const ALL_LIST_ENDPOINTS = LANGS.flatMap(lang => ENDPOINTS.map(endpoint => ({
   )}_${lang}`,
 })))
 
-// エクスポート先ディレクトリの作成
 const createExportPath = async () => {
   try {
     await fs.access(EXPORT_PATH)
@@ -52,13 +48,11 @@ const createExportPath = async () => {
   }
 }
 
-// 共通ヘッダー
 const headers = {
   'x-rcms-api-access-token': process.env.NUXT_PUBLIC_STATIC_TOKEN,
 }
 
-// APIデータを取得する関数
-async function kurocoAPIAll(endpoint) {
+async function fetchAll(endpoint) {
   const initialData = await fetch(
     `${ROOT_URL}${endpoint}`,
     { headers },
@@ -83,15 +77,13 @@ async function kurocoAPIAll(endpoint) {
   ]
 }
 
-// メイン処理
 (async () => {
   console.log('データのプリフェッチを開始します')
 
   await createExportPath()
 
-  // ③ 言語別にファイル保存処理
   for (const { endpoint, saveAs } of ALL_LIST_ENDPOINTS) {
-    const data = await kurocoAPIAll(endpoint)
+    const data = await fetchAll(endpoint)
     const filePath = path.join(
       EXPORT_PATH,
       `all${saveAs}.json`,

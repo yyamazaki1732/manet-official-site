@@ -1,7 +1,7 @@
 #!/bin/bash
 
-INPUT_DIR=./src/features/assets/data
-OUTPUT_DIR=./src/features/types/data
+INPUT_DIR=./src/entities/api/data
+OUTPUT_DIR=./src/entities/api/model
 
 mkdir -p $OUTPUT_DIR
 
@@ -25,5 +25,5 @@ do
     --top-level "$typename"
 
   # eslint-disable コメントを先頭に追加
-  sed -i '' '1s/^/\/\* eslint-disable \*\/\n\n/' "$OUTPUT_DIR/$type.d.ts"
+  sed -i '' '1s/^/\/* eslint-disable *\/\n\n/' "$OUTPUT_DIR/$type.d.ts"
 done

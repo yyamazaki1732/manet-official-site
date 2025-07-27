@@ -10,9 +10,9 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "prefetch": "node ./src/features/prefetch/index.js",
-    "generate:types": "./src/features/scripts/generate-types.sh",
-    "kuroco:fetch": "pnpm run prefetch && pnpm run generate:types"
+    "prefetch": "node ./src/entities/api/scripts/prefetch.js",
+    "generate:types": "./src/entities/api/scripts/generate-types.sh",
+    "api:fetch": "pnpm run prefetch && pnpm run generate:types"
   },
   "dependencies": {
     "@nuxt/eslint": "1.6.0",
