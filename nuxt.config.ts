@@ -31,6 +31,7 @@ export default defineNuxtConfig({
     },
   },
   i18n: {
+    langDir: '../src/shared/i18n/locales',
     locales: [
       { code: 'ja', language: 'ja-JP', file: 'ja.json' },
       { code: 'en', language: 'en-US', file: 'en.json' },
