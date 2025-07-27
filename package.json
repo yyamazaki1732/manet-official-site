@@ -9,9 +9,9 @@
     "lint:fix": "eslint . --ext .js,.ts,.vue --fix",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare" ,
-    "prefetch": "node prefetch/index.js",
-    "generate:types": "./scripts/generate-types.sh",
+    "postinstall": "nuxt prepare",
+    "prefetch": "node ./src/features/prefetch/index.js",
+    "generate:types": "./src/features/scripts/generate-types.sh",
     "kuroco:fetch": "pnpm run prefetch && pnpm run generate:types"
   },
   "dependencies": {
@@ -27,6 +27,7 @@
     "@stylistic/eslint-plugin": "^5.2.0",
     "dotenv": "^17.2.1",
     "globals": "^16.3.0",
+    "quicktype": "23.2.6",
     "typescript": "^5.8.3"
   }
 }
