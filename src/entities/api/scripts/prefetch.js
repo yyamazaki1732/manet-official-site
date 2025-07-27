@@ -53,19 +53,39 @@ const headers = {
 }
 
 async function fetchAll(endpoint) {
-  const initialData = await fetch(
+  const res = await fetch(
     `${ROOT_URL}${endpoint}`,
     { headers },
-  ).then(res => res.json())
+  )
+  const text = await res.text()
+  let initialData
+  try {
+    initialData = JSON.parse(text)
+  }
+  catch (e) {
+    console.error('APIレスポンスがJSONではありません:', text)
+    throw e
+  }
   const { list, pageInfo } = initialData
   const totalPageCnt = pageInfo.totalPageCnt
 
   const promises = []
   for (let i = 2; i <= totalPageCnt; i++) {
-    promises.push(fetch(
-      `${ROOT_URL}${endpoint}&pageID=${i}`,
-      { headers },
-    ).then(res => res.json()))
+    promises.push(
+      fetch(
+        `${ROOT_URL}${endpoint}&pageID=${i}`,
+        { headers },
+      ).then(async (res) => {
+        const t = await res.text()
+        try {
+          return JSON.parse(t)
+        }
+        catch (e) {
+          console.error('APIレスポンスがJSONではありません:', t)
+          throw e
+        }
+      }),
+    )
   }
 
   const allData = await Promise.all(promises)

@@ -1,3 +1,7 @@
 <template>
-    <h1>index.vue</h1>
+    <Page />
 </template>
+
+<script setup lang="ts">
+import Page from '@/pages/index.vue'
+</script>

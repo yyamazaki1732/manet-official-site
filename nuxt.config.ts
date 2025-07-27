@@ -3,18 +3,17 @@
 import tailwindcss from '@tailwindcss/vite'
 
 export default defineNuxtConfig({
-  modules: ['@nuxt/eslint'],
+  modules: ['@nuxt/eslint', '@nuxtjs/i18n'],
   devtools: { enabled: true },
   css: ['@/features/style/tailwindcss.css'],
   runtimeConfig: {
     public: {
-      apiBaseURL: 'https://manet.g.kuroco.app',
-      staticToken: '0c459601f46025f5ff46e57bb7605933065de5b0a31e7abd6509a448856d9229',
     },
   },
   dir: {
     pages: '../src/app/routes',
     layouts: '../src/app/layouts',
+    public: '../src/app/public',
   },
   srcDir: 'src',
   alias: {
@@ -31,5 +30,12 @@ export default defineNuxtConfig({
     config: {
       stylistic: true,
     },
+  },
+  i18n: {
+    locales: [
+      { code: 'ja', language: 'ja-JP', file: 'ja.json' },
+      { code: 'en', language: 'en-US', file: 'en.json' },
+    ],
+    defaultLocale: 'ja',
   },
 })
