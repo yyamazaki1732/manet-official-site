@@ -30,4 +30,11 @@ export default defineNuxtConfig({
       stylistic: true,
     },
   },
+  i18n: {
+    locales: [
+      { code: 'ja', language: 'ja-JP' },
+      { code: 'en', language: 'en-US' },
+    ],
+    defaultLocale: 'ja',
+  },
 })
