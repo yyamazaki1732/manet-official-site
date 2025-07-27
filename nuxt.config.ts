@@ -13,6 +13,7 @@ export default defineNuxtConfig({
   dir: {
     pages: '../src/app/routes',
     layouts: '../src/app/layouts',
+    public: '../src/app/public',
   },
   srcDir: 'src',
   alias: {
