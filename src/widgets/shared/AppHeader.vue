@@ -1,8 +1,18 @@
 <template>
     <header :class="['header']">
-        <h1>App Header</h1>
+        <h1>App Header / {{ $t('welcome') }}</h1>
+        <div class="locales">
+            <button v-for="(locale, index) in locales" :key="locale.code" type="button" @click="setLocale(locale.code)">
+                {{ locale.code }} <span v-if="index < locales.length - 1">-</span>
+                {{ locale.name }}
+            </button>
+        </div>
     </header>
 </template>
+
+<script setup lang="ts">
+const { locales, setLocale } = useI18n()
+</script>
 
 <style scoped>
 .header {
