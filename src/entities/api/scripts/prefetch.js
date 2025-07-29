@@ -21,6 +21,7 @@ const LANGS = [
 ]
 const ENDPOINTS = [
   '/rcms-api/3/home',
+  '/rcms-api/3/about',
 ]
 
 const ALL_LIST_ENDPOINTS = LANGS.flatMap(lang => ENDPOINTS.map(endpoint => ({
@@ -84,17 +85,18 @@ async function fetchAll(endpoint) {
 
   for (const { endpoint, saveAs } of ALL_LIST_ENDPOINTS) {
     const data = await fetchAll(endpoint)
+    // 配列 → キー付きオブジェクト形式に変換
+    const i18nData = {}
+    for (const item of data) {
+      i18nData[item.slug || 'default'] = item
+    }
     const filePath = path.join(
       EXPORT_PATH,
       `all${saveAs}.json`,
     )
     await fs.writeFile(
       filePath,
-      JSON.stringify(
-        data,
-        null,
-        2,
-      ),
+      JSON.stringify(i18nData, null, 2),
       'utf-8',
     )
     console.log(`データを保存しました: ${filePath}`)

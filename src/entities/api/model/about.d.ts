@@ -1,10 +1,10 @@
 /* eslint-disable */
 
-export interface HomeItem {
-    home: Home;
+export interface AboutItem {
+    about: About;
 }
 
-export interface Home {
+export interface About {
     topics_id:                number;
     ymd:                      Date;
     contents_type:            number;
