@@ -5,18 +5,22 @@ OUTPUT_DIR=./src/entities/api/model
 
 mkdir -p $OUTPUT_DIR
 
-FILES=$(ls $INPUT_DIR/*.json)
+# endpoint名だけ抽出（home, about など）
+TYPES=$(ls $INPUT_DIR/*.json | sed -E 's/.*\/([a-z]+)-(ja|en)\.json/\1/' | sort | uniq)
 
-for file in $FILES
+for type in $TYPES
 do
-  filename=$(basename "$file" .json)
+  # どちらかの言語ファイルを型生成に使う（ja優先、なければen）
+  if [ -f "$INPUT_DIR/$type-ja.json" ]; then
+    file="$INPUT_DIR/$type-ja.json"
+  else
+    file="$INPUT_DIR/$type-en.json"
+  fi
 
-  # ファイル名から種類を抽出（例: top, news, location）
-  type=$(echo "$filename" | sed -E 's/all_rcms-api_3_//' | sed -E 's/_(ja|en)$//')
   capitalized=$(echo "${type:0:1}" | tr a-z A-Z)${type:1}
-  typename="${capitalized}Item" # 例: TopItem, NewsItem
+  typename="${capitalized}Item" # 例: HomeItem, AboutItem
 
-  echo "Generating $typename from $filename.json"
+  echo "Generating $typename from $(basename "$file")"
 
   npx quicktype "$file" \
     -o "$OUTPUT_DIR/$type.d.ts" \

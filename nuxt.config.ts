@@ -31,17 +31,15 @@ export default defineNuxtConfig({
     },
   },
   i18n: {
-    langDir: '../src/shared/i18n/locales',
+    langDir: '../src/entities/api/data',
     locales: [
       {
         code: 'ja',
         language: 'ja-JP',
         files:
         [
-          'ja/default.json',
-          'ja/top.json',
-          'ja/all_rcms-api_3_home_ja.json',
-          'ja/all_rcms-api_3_about_ja.json',
+          'home-ja.json',
+          'about-ja.json',
         ],
       },
       {
@@ -49,10 +47,8 @@ export default defineNuxtConfig({
         language: 'en-US',
         files:
         [
-          'en/default.json',
-          'en/top.json',
-          'en/all_rcms-api_3_home_en.json',
-          'en/all_rcms-api_3_about_en.json',
+          'home-en.json',
+          'about-en.json',
         ],
       },
     ],

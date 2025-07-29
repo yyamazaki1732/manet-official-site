@@ -15,23 +15,12 @@ const EXPORT_PATH = path.join(
   '/api/data',
 )
 
-const LANGS = [
-  'ja',
-  'en',
-]
 const ENDPOINTS = [
-  '/rcms-api/3/home',
-  '/rcms-api/3/about',
+  { endpoint: '/rcms-api/3/home', key: 'home' },
+  { endpoint: '/rcms-api/3/about', key: 'about' },
 ]
 
-const ALL_LIST_ENDPOINTS = LANGS.flatMap(lang => ENDPOINTS.map(endpoint => ({
-  lang,
-  endpoint: `${endpoint}?_lang=${lang}`,
-  saveAs: `${endpoint.replaceAll(
-    '/',
-    '_',
-  )}_${lang}`,
-})))
+const LANGS = ['ja', 'en']
 
 const createExportPath = async () => {
   try {
@@ -83,23 +72,21 @@ async function fetchAll(endpoint) {
 
   await createExportPath()
 
-  for (const { endpoint, saveAs } of ALL_LIST_ENDPOINTS) {
-    const data = await fetchAll(endpoint)
-    // 配列 → キー付きオブジェクト形式に変換
-    const i18nData = {}
-    for (const item of data) {
-      i18nData[item.slug || 'default'] = item
+  for (const { endpoint, key } of ENDPOINTS) {
+    for (const lang of LANGS) {
+      const data = await fetchAll(`${endpoint}?_lang=${lang}`)
+      // キー付きオブジェクト形式に変換
+      const i18nData = { [key]: Array.isArray(data) ? data[0] : data }
+      // ファイル名生成部分を修正
+      const fileName = `${key}-${lang}.json`
+      const filePath = path.join(EXPORT_PATH, fileName)
+      await fs.writeFile(
+        filePath,
+        JSON.stringify(i18nData, null, 2),
+        'utf-8',
+      )
+      console.log(`データを保存しました: ${filePath}`)
     }
-    const filePath = path.join(
-      EXPORT_PATH,
-      `all${saveAs}.json`,
-    )
-    await fs.writeFile(
-      filePath,
-      JSON.stringify(i18nData, null, 2),
-      'utf-8',
-    )
-    console.log(`データを保存しました: ${filePath}`)
   }
 
   console.log('全てのデータのプリフェッチが完了しました')
