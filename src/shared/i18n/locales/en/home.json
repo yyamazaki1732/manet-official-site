@@ -1,9 +1,9 @@
-[
-  {
+{
+  "home": {
     "topics_id": 3,
     "ymd": "2025-07-27",
     "contents_type": 15,
-    "subject": "日本語ページ",
+    "subject": "英語ページ",
     "topics_flg": 1,
     "open_flg": 1,
     "regular_flg": 0,
@@ -27,6 +27,6 @@
     "contents_type_list": [
       15
     ],
-    "tagline": "タグライン"
+    "tagline": "TAGLINE"
   }
-]
+}

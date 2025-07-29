@@ -13,7 +13,6 @@ export default defineNuxtConfig({
   dir: {
     pages: '../src/app/routes',
     layouts: '../src/app/layouts',
-    public: '../src/app/public',
   },
   srcDir: 'src',
   alias: {
@@ -32,9 +31,26 @@ export default defineNuxtConfig({
     },
   },
   i18n: {
+    langDir: '../src/entities/api/data',
     locales: [
-      { code: 'ja', language: 'ja-JP', file: 'ja.json' },
-      { code: 'en', language: 'en-US', file: 'en.json' },
+      {
+        code: 'ja',
+        language: 'ja-JP',
+        files:
+        [
+          'home-ja.json',
+          'about-ja.json',
+        ],
+      },
+      {
+        code: 'en',
+        language: 'en-US',
+        files:
+        [
+          'home-en.json',
+          'about-en.json',
+        ],
+      },
     ],
     defaultLocale: 'ja',
   },
