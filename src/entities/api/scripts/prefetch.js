@@ -8,11 +8,9 @@ dotenv.config()
 const ROOT_URL = process.env.NUXT_PUBLIC_API_BASE
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
-const EXPORT_PATH = path.join(
+const EXPORT_BASE_PATH = path.join(
   __dirname,
-  '..',
-  '..',
-  '/api/data',
+  '..', '..', '..', 'shared', 'i18n', 'locales',
 )
 
 const ENDPOINTS = [
@@ -22,22 +20,16 @@ const ENDPOINTS = [
 
 const LANGS = ['ja', 'en']
 
-const createExportPath = async () => {
+const createExportPath = async (lang) => {
+  const dir = path.join(EXPORT_BASE_PATH, lang)
   try {
-    await fs.access(EXPORT_PATH)
+    await fs.access(dir)
   }
-  catch (error) {
-    console.error(
-      'fetching error:',
-      error,
-    )
-    await fs.mkdir(
-      EXPORT_PATH,
-      { recursive: true },
-    )
+  catch {
+    await fs.mkdir(dir, { recursive: true })
   }
+  return dir
 }
-
 const headers = {
   'x-rcms-api-access-token': process.env.NUXT_PUBLIC_STATIC_TOKEN,
 }
@@ -70,15 +62,13 @@ async function fetchAll(endpoint) {
 (async () => {
   console.log('データのプリフェッチを開始します')
 
-  await createExportPath()
-
-  for (const { endpoint, key } of ENDPOINTS) {
-    for (const lang of LANGS) {
+  for (const lang of LANGS) {
+    const EXPORT_PATH = await createExportPath(lang)
+    for (const { endpoint, key } of ENDPOINTS) {
       const data = await fetchAll(`${endpoint}?_lang=${lang}`)
-      // キー付きオブジェクト形式に変換
       const i18nData = { [key]: Array.isArray(data) ? data[0] : data }
-      // ファイル名生成部分を修正
-      const fileName = `${key}-${lang}.json`
+      // ファイル名は about.json, home.json など
+      const fileName = `${key}.json`
       const filePath = path.join(EXPORT_PATH, fileName)
       await fs.writeFile(
         filePath,

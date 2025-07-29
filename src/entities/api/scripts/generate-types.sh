@@ -1,24 +1,27 @@
 #!/bin/bash
 
-INPUT_DIR=./src/entities/api/data
+INPUT_BASE=./src/shared/i18n/locales
 OUTPUT_DIR=./src/entities/api/model
 
 mkdir -p $OUTPUT_DIR
 
-# endpoint名だけ抽出（home, about など）
-TYPES=$(ls $INPUT_DIR/*.json | sed -E 's/.*\/([a-z]+)-(ja|en)\.json/\1/' | sort | uniq)
+# endpoint名だけ抽出（about, home など）
+TYPES=$(find $INPUT_BASE -type f -name "*.json" | sed -E 's/.*\/([a-z]+)\/([a-z]+)\.json/\2/' | sort | uniq)
 
 for type in $TYPES
 do
-  # どちらかの言語ファイルを型生成に使う（ja優先、なければen）
-  if [ -f "$INPUT_DIR/$type-ja.json" ]; then
-    file="$INPUT_DIR/$type-ja.json"
+  # ja優先、なければen
+  if [ -f "$INPUT_BASE/ja/$type.json" ]; then
+    file="$INPUT_BASE/ja/$type.json"
+  elif [ -f "$INPUT_BASE/en/$type.json" ]; then
+    file="$INPUT_BASE/en/$type.json"
   else
-    file="$INPUT_DIR/$type-en.json"
+    echo "No json file found for $type"
+    continue
   fi
 
   capitalized=$(echo "${type:0:1}" | tr a-z A-Z)${type:1}
-  typename="${capitalized}Item" # 例: HomeItem, AboutItem
+  typename="${capitalized}Item"
 
   echo "Generating $typename from $(basename "$file")"
 
@@ -28,6 +31,5 @@ do
     --just-types \
     --top-level "$typename"
 
-  # eslint-disable コメントを先頭に追加
   sed -i '' '1s/^/\/* eslint-disable *\/\n\n/' "$OUTPUT_DIR/$type.d.ts"
 done
