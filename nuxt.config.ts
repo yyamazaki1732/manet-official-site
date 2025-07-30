@@ -19,6 +19,10 @@ export default defineNuxtConfig({
     '@': '../src',
     '#shared': '../src/shared',
   },
+  devServer: {
+    port: 3456,
+    host: '0.0.0.0',
+  },
   compatibilityDate: '2025-07-15',
   vite: {
     plugins: [
@@ -54,4 +58,5 @@ export default defineNuxtConfig({
     ],
     defaultLocale: 'ja',
   },
+
 })
