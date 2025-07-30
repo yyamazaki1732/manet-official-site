@@ -12,11 +12,16 @@
         {{ locale.name }}
       </button>
     </div>
+    <h2>isOpen : {{ isOpen }}</h2>
+    <button @click="toggle">
+      click
+    </button>
   </header>
 </template>
 
 <script setup lang="ts">
 const { locales, setLocale } = useI18n()
+const { isOpen, toggle } = useGlobalNav()
 </script>
 
 <style scoped>
