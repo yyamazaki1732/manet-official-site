@@ -6,7 +6,7 @@ export default defineNuxtConfig({
   modules: ['@nuxt/eslint', '@nuxtjs/i18n', '@nuxt/image'],
   imports: {
     dirs: [
-      'src/shared/composables/**',
+      'shared/composables/*',
     ],
   },
   devtools: { enabled: true },
