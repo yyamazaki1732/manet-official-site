@@ -3,7 +3,7 @@
 import tailwindcss from '@tailwindcss/vite'
 
 export default defineNuxtConfig({
-  modules: ['@nuxt/eslint', '@nuxtjs/i18n'],
+  modules: ['@nuxt/eslint', '@nuxtjs/i18n', '@nuxt/image'],
   devtools: { enabled: true },
   css: ['@/features/style/tailwindcss.css'],
   runtimeConfig: {

@@ -31,4 +31,12 @@ export interface Home {
     contents_type_ext_col_05: null;
     contents_type_list:       number[];
     tagline:                  string;
+    img:                      Img;
+}
+
+export interface Img {
+    url:     string;
+    url_org: string;
+    desc:    string;
+    credit:  string;
 }
