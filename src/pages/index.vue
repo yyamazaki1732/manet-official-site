@@ -13,5 +13,5 @@
     width="400"
     height="400"
   />
-  <div v-html="$t('home.wysiwyg')" />
+  <div v-html="$t('home.wysiwyg')" />CC
 </template>
