@@ -9,5 +9,5 @@
 
 <script setup lang="ts">
 import AppHeader from '@/widgets/shared/AppHeader.vue'
-import AppFooter from '@/widgets/shared/AppFooter.vue'
+import AppFooter from '~/widgets/shared/AppFooter/AppFooter.vue'
 </script>
