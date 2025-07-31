@@ -13,4 +13,5 @@
         width="400"
         height="400"
     />
+    <div v-html="$t('home.wysiwyg')" />
 </template>
