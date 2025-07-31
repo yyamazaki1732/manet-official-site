@@ -40,6 +40,10 @@ export default defineNuxtConfig({
     },
   },
   i18n: {
+    compilation: {
+      strictMessage: false,
+      escapeHtml: false,
+    },
     langDir: '../src/shared/i18n/locales',
     locales: [
       {
