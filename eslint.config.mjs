@@ -7,7 +7,6 @@ export default withNuxt(
     rules: {
       ...stylistic.configs['recommended'].rules,
       'vue/multi-word-component-names': 'off',
-      'vue/html-indent': ['error', 4],
     },
   },
 )
