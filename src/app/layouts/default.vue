@@ -1,13 +1,14 @@
 <template>
-    <div>
-        <AppHeader />
-        <h2>main</h2>
-        <slot />
-        <AppFooter />
-    </div>
+  <div>
+    <AppHeader />
+    <main>
+      <slot />
+    </main>
+    <AppFooter />
+  </div>
 </template>
 
 <script setup lang="ts">
-import AppHeader from '@/widgets/shared/AppHeader.vue'
-import AppFooter from '@/widgets/shared/AppFooter.vue'
+import AppHeader from '@/widgets/shared/AppHeader/AppHeader.vue'
+import AppFooter from '@/widgets/shared/AppFooter/AppFooter.vue'
 </script>
