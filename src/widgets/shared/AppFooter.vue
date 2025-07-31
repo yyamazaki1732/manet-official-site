@@ -1,7 +1,7 @@
 <template>
-    <footer :class="['footer']">
-        <h1>App Footer</h1>
-    </footer>
+  <footer :class="['footer']">
+    <h1>App Footer</h1>
+  </footer>
 </template>
 
 <style scoped>
@@ -11,6 +11,6 @@
     padding: 10px;
     text-align: center;
     border-top: 1px solid #dee2e6;
-    min-height: 90px;
+  min-height: 90px;
 }
 </style>
