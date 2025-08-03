@@ -4,13 +4,25 @@ import tailwindcss from '@tailwindcss/vite'
 
 export default defineNuxtConfig({
   modules: ['@nuxt/eslint', '@nuxtjs/i18n', '@nuxt/image'],
+  components: [
+    {
+      path: 'features/lang-switcher',
+      extensions: ['.vue'],
+      prefix: 'Ui',
+    },
+    {
+      path: 'widgets/shared',
+      extensions: ['.vue'],
+      prefix: 'Ui',
+    },
+  ],
   imports: {
     dirs: [
       'shared/composables/*',
     ],
   },
   devtools: { enabled: true },
-  css: ['@/features/style/tailwindcss.css'],
+  css: ['@/app/style/tailwindcss.css'],
   runtimeConfig: {
     public: {
     },
