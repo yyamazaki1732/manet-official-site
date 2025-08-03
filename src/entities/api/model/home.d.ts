@@ -31,7 +31,10 @@ export interface Home {
     contents_type_ext_col_05: null;
     contents_type_list:       number[];
     tagline:                  string;
+    "meta-description":       string;
     img:                      Img;
+    wysiwyg:                  string;
+    html:                     string;
 }
 
 export interface Img {

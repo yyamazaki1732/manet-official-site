@@ -1,10 +1,10 @@
 /* eslint-disable */
 
-export interface AboutItem {
-    about: About;
+export interface CommonItem {
+    common: Common;
 }
 
-export interface About {
+export interface Common {
     topics_id:                number;
     ymd:                      Date;
     contents_type:            number;
@@ -30,6 +30,12 @@ export interface About {
     contents_type_ext_col_04: null;
     contents_type_ext_col_05: null;
     contents_type_list:       number[];
-    tagline:                  string;
-    "meta-description":       string;
+    ogp:                      Ogp;
+}
+
+export interface Ogp {
+    url:     string;
+    url_org: string;
+    desc:    string;
+    credit:  string;
 }

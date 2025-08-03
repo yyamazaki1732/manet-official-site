@@ -8,7 +8,7 @@
     "open_flg": 1,
     "regular_flg": 0,
     "inst_ymdhi": "2025-07-29T21:18:54+09:00",
-    "update_ymdhi": "2025-07-29T21:18:54+09:00",
+    "update_ymdhi": "2025-08-03T20:44:14+09:00",
     "topics_group_id": 8,
     "slug": "about",
     "order_no": 0,
@@ -27,6 +27,7 @@
     "contents_type_list": [
       16
     ],
-    "tagline": "TAGLINE"
+    "tagline": "TAGLINE",
+    "meta-description": "TBD | 日本語ページ ABOUT"
   }
 }
