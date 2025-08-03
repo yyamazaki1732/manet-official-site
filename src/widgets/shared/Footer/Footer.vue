@@ -8,4 +8,4 @@ console.log('AppFooter component loaded')
   </footer>
 </template>
 
-<style src="./AppFooter.css" scoped></style>
+<style src="./Footer.css" scoped></style>

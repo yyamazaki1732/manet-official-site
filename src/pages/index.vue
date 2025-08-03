@@ -1,3 +1,7 @@
+<script setup lang="ts">
+const { sanitize } = useSanitize()
+</script>
+
 <template>
   <h1>index.vue</h1>
   <NuxtPicture
@@ -13,4 +17,5 @@
     width="400"
     height="400"
   />
+  <div v-html="sanitize($t('home.wysiwyg'))" />CC
 </template>

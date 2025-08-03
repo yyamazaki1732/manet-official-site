@@ -12,6 +12,7 @@ export default withNuxt(
       ...stylistic.configs['recommended'].rules,
       ...cssPlugin.configs['recommended'].rules,
       'vue/multi-word-component-names': 'off',
+      'vue/no-v-html': 'off',
     },
   },
 )
