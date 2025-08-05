@@ -1,22 +1,29 @@
 #!/bin/bash
 
-INPUT_DIR=./src/entities/api/data
+INPUT_BASE=./src/shared/i18n/locales
 OUTPUT_DIR=./src/entities/api/model
 
 mkdir -p $OUTPUT_DIR
 
-FILES=$(ls $INPUT_DIR/*.json)
+# endpoint名だけ抽出（about, home など）
+TYPES=$(find $INPUT_BASE -type f -name "*.json" | sed -E 's/.*\/([a-z]+)\/([a-z]+)\.json/\2/' | sort | uniq)
 
-for file in $FILES
+for type in $TYPES
 do
-  filename=$(basename "$file" .json)
+  # ja優先、なければen
+  if [ -f "$INPUT_BASE/ja/$type.json" ]; then
+    file="$INPUT_BASE/ja/$type.json"
+  elif [ -f "$INPUT_BASE/en/$type.json" ]; then
+    file="$INPUT_BASE/en/$type.json"
+  else
+    echo "No json file found for $type"
+    continue
+  fi
 
-  # ファイル名から種類を抽出（例: top, news, location）
-  type=$(echo "$filename" | sed -E 's/all_rcms-api_3_//' | sed -E 's/_(ja|en)$//')
   capitalized=$(echo "${type:0:1}" | tr a-z A-Z)${type:1}
-  typename="${capitalized}Item" # 例: TopItem, NewsItem
+  typename="${capitalized}Item"
 
-  echo "Generating $typename from $filename.json"
+  echo "Generating $typename from $(basename "$file")"
 
   npx quicktype "$file" \
     -o "$OUTPUT_DIR/$type.d.ts" \
@@ -24,6 +31,5 @@ do
     --just-types \
     --top-level "$typename"
 
-  # eslint-disable コメントを先頭に追加
   sed -i '' '1s/^/\/* eslint-disable *\/\n\n/' "$OUTPUT_DIR/$type.d.ts"
 done

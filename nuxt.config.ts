@@ -3,9 +3,26 @@
 import tailwindcss from '@tailwindcss/vite'
 
 export default defineNuxtConfig({
-  modules: ['@nuxt/eslint', '@nuxtjs/i18n'],
+  modules: ['@nuxt/eslint', '@nuxtjs/i18n', '@nuxt/image'],
+  components: [
+    {
+      path: 'features/lang-switcher',
+      extensions: ['.vue'],
+      prefix: 'Ui',
+    },
+    {
+      path: 'widgets/shared',
+      extensions: ['.vue'],
+      prefix: 'Ui',
+    },
+  ],
+  imports: {
+    dirs: [
+      'shared/composables/*',
+    ],
+  },
   devtools: { enabled: true },
-  css: ['@/features/style/tailwindcss.css'],
+  css: ['@/app/style/tailwindcss.css'],
   runtimeConfig: {
     public: {
     },
@@ -13,12 +30,15 @@ export default defineNuxtConfig({
   dir: {
     pages: '../src/app/routes',
     layouts: '../src/app/layouts',
-    public: '../src/app/public',
   },
   srcDir: 'src',
   alias: {
     '@': '../src',
     '#shared': '../src/shared',
+  },
+  devServer: {
+    port: 3456,
+    host: '0.0.0.0',
   },
   compatibilityDate: '2025-07-15',
   vite: {
@@ -32,10 +52,32 @@ export default defineNuxtConfig({
     },
   },
   i18n: {
+    compilation: {
+      strictMessage: false,
+      escapeHtml: false,
+    },
+    langDir: '../src/shared/i18n/locales',
     locales: [
-      { code: 'ja', language: 'ja-JP', file: 'ja.json' },
-      { code: 'en', language: 'en-US', file: 'en.json' },
+      {
+        code: 'ja',
+        language: 'ja-JP',
+        files:
+        [
+          'ja/home.json',
+          'ja/about.json',
+        ],
+      },
+      {
+        code: 'en',
+        language: 'en-US',
+        files:
+        [
+          'en/home.json',
+          'en/about.json',
+        ],
+      },
     ],
     defaultLocale: 'ja',
   },
+
 })

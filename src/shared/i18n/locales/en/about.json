@@ -1,21 +1,21 @@
-[
-  {
-    "topics_id": 3,
-    "ymd": "2025-07-27",
-    "contents_type": 15,
-    "subject": "英語ページ",
+{
+  "about": {
+    "topics_id": 4,
+    "ymd": "1970-01-01",
+    "contents_type": 16,
+    "subject": "英語ページ ABOUT",
     "topics_flg": 1,
     "open_flg": 1,
     "regular_flg": 0,
-    "inst_ymdhi": "2025-07-27T08:30:25+09:00",
-    "update_ymdhi": "2025-07-27T08:30:25+09:00",
-    "topics_group_id": 7,
-    "slug": "home",
+    "inst_ymdhi": "2025-07-29T21:18:54+09:00",
+    "update_ymdhi": "2025-07-29T21:18:54+09:00",
+    "topics_group_id": 8,
+    "slug": "about",
     "order_no": 0,
-    "group_nm": "HOME",
-    "group_description": "path : \"/\"",
+    "group_nm": "ABOUT",
+    "group_description": "path : \"/about\"",
     "contents_type_cnt": 1,
-    "contents_type_nm": "HOME",
+    "contents_type_nm": "ABOUT",
     "contents_type_slug": null,
     "contents_type_parent_nm": null,
     "category_parent_id": null,
@@ -25,8 +25,8 @@
     "contents_type_ext_col_04": null,
     "contents_type_ext_col_05": null,
     "contents_type_list": [
-      15
+      16
     ],
     "tagline": "TAGLINE"
   }
-]
+}

@@ -1,10 +1,10 @@
 /* eslint-disable */
 
-export interface HomeItem {
-    home: Home;
+export interface AboutItem {
+    about: About;
 }
 
-export interface Home {
+export interface About {
     topics_id:                number;
     ymd:                      Date;
     contents_type:            number;
@@ -31,12 +31,4 @@ export interface Home {
     contents_type_ext_col_05: null;
     contents_type_list:       number[];
     tagline:                  string;
-    img:                      Img;
-}
-
-export interface Img {
-    url:     string;
-    url_org: string;
-    desc:    string;
-    credit:  string;
 }
