@@ -1,17 +1,27 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 
 import tailwindcss from '@tailwindcss/vite'
+import { ENDPOINTS } from './src/entities/api/constants/endpoints'
+
+// pnpm app:fetch で生成されるJSONファイルのパスを定義
+const jaFiles = ENDPOINTS.map(e => `ja/${e.key}.json`)
+const enFiles = ENDPOINTS.map(e => `en/${e.key}.json`)
 
 export default defineNuxtConfig({
   modules: ['@nuxt/eslint', '@nuxtjs/i18n', '@nuxt/image'],
   components: [
     {
-      path: 'features/lang-switcher',
+      path: 'widgets/layout',
       extensions: ['.vue'],
-      prefix: 'Ui',
+      prefix: 'Layout',
     },
     {
       path: 'widgets/shared',
+      extensions: ['.vue'],
+      prefix: 'Widget',
+    },
+    {
+      path: 'features/lang-switcher',
       extensions: ['.vue'],
       prefix: 'Ui',
     },
@@ -61,20 +71,12 @@ export default defineNuxtConfig({
       {
         code: 'ja',
         language: 'ja-JP',
-        files:
-        [
-          'ja/home.json',
-          'ja/about.json',
-        ],
+        files: jaFiles,
       },
       {
         code: 'en',
         language: 'en-US',
-        files:
-        [
-          'en/home.json',
-          'en/about.json',
-        ],
+        files: enFiles,
       },
     ],
     defaultLocale: 'ja',

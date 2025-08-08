@@ -17,6 +17,7 @@ export interface About {
     topics_group_id:          number;
     slug:                     string;
     order_no:                 number;
+    col_sort:                 string;
     group_nm:                 string;
     group_description:        string;
     contents_type_cnt:        number;
@@ -31,4 +32,5 @@ export interface About {
     contents_type_ext_col_05: null;
     contents_type_list:       number[];
     tagline:                  string;
+    meta_description:         string;
 }

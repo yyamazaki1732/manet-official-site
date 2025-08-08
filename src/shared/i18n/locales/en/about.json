@@ -8,10 +8,11 @@
     "open_flg": 1,
     "regular_flg": 0,
     "inst_ymdhi": "2025-07-29T21:18:54+09:00",
-    "update_ymdhi": "2025-07-29T21:18:54+09:00",
+    "update_ymdhi": "2025-08-06T21:43:23+09:00",
     "topics_group_id": 8,
     "slug": "about",
     "order_no": 0,
+    "col_sort": "[]",
     "group_nm": "ABOUT",
     "group_description": "path : \"/about\"",
     "contents_type_cnt": 1,
@@ -27,6 +28,7 @@
     "contents_type_list": [
       16
     ],
-    "tagline": "TAGLINE"
+    "tagline": "TAGLINE",
+    "meta_description": "TBD-日本語ページ ABOUT"
   }
 }

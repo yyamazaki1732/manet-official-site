@@ -1,9 +1,5 @@
 <template>
-  <div>
-    <UiHeader />
-    <main>
-      <slot />
-    </main>
-    <UiFooter />
-  </div>
+  <LayoutDefault>
+    <slot />
+  </LayoutDefault>
 </template>

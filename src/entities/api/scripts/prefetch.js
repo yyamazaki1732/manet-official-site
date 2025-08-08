@@ -3,6 +3,7 @@ import fs from 'fs/promises'
 import path from 'path'
 import { fileURLToPath } from 'url'
 import dotenv from 'dotenv'
+import { ENDPOINTS } from '../constants/endpoints.js'
 
 dotenv.config()
 const ROOT_URL = process.env.NUXT_PUBLIC_API_BASE
@@ -12,11 +13,6 @@ const EXPORT_BASE_PATH = path.join(
   __dirname,
   '..', '..', '..', 'shared', 'i18n', 'locales',
 )
-
-const ENDPOINTS = [
-  { endpoint: '/rcms-api/3/home', key: 'home' },
-  { endpoint: '/rcms-api/3/about', key: 'about' },
-]
 
 const LANGS = ['ja', 'en']
 
