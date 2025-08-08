@@ -17,6 +17,7 @@ export interface Common {
     topics_group_id:          number;
     slug:                     string;
     order_no:                 number;
+    col_sort:                 string;
     group_nm:                 string;
     group_description:        string;
     contents_type_cnt:        number;

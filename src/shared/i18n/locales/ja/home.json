@@ -8,10 +8,11 @@
     "open_flg": 1,
     "regular_flg": 0,
     "inst_ymdhi": "2025-07-27T08:30:25+09:00",
-    "update_ymdhi": "2025-08-03T20:47:21+09:00",
+    "update_ymdhi": "2025-08-06T21:43:13+09:00",
     "topics_group_id": 7,
     "slug": "home",
     "order_no": 0,
+    "col_sort": "[]",
     "group_nm": "HOME",
     "group_description": "path : \"/\"",
     "contents_type_cnt": 1,
@@ -28,7 +29,7 @@
       15
     ],
     "tagline": "タグライン",
-    "meta-description": "TBD | 日本語ページ",
+    "meta_description": "TBD-日本語ページ",
     "img": {
       "url": "https://manet.g.kuroco-img.app/v=1753879434/files/d/thumb (7).jpg",
       "url_org": "https://manet.g.kuroco-img.app/files/d/thumb (7).jpg",

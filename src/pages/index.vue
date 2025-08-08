@@ -1,5 +1,12 @@
 <script setup lang="ts">
 const { sanitize } = useSanitize()
+
+useSeoMeta({
+  title: $t('home.subject'),
+  ogTitle: $t('home.subject'),
+  description: $t('home.meta_description'),
+  ogDescription: $t('home.meta_description'),
+})
 </script>
 
 <template>
