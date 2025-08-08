@@ -11,12 +11,17 @@ export default defineNuxtConfig({
   modules: ['@nuxt/eslint', '@nuxtjs/i18n', '@nuxt/image'],
   components: [
     {
-      path: 'features/lang-switcher',
+      path: 'widgets/layout',
       extensions: ['.vue'],
-      prefix: 'Ui',
+      prefix: 'Layout',
     },
     {
       path: 'widgets/shared',
+      extensions: ['.vue'],
+      prefix: 'Widget',
+    },
+    {
+      path: 'features/lang-switcher',
       extensions: ['.vue'],
       prefix: 'Ui',
     },

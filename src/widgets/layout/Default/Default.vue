@@ -16,12 +16,12 @@ useSeoMeta({
 </script>
 
 <template>
-  <UiHeader />
+  <WidgetHeader />
   <main :class="['footer', 'opacity-75']">
     <h1>DefaultLayout</h1>
     <slot />
   </main>
-  <UiFooter />
+  <WidgetFooter />
 </template>
 
-<style src="./DefaultLayout.css" scoped />
+<style src="./Default.css" scoped />

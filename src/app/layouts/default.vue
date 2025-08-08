@@ -1,5 +1,5 @@
 <template>
-  <UiDefaultLayout>
+  <LayoutDefault>
     <slot />
-  </UiDefaultLayout>
+  </LayoutDefault>
 </template>
