@@ -25,12 +25,14 @@
     "nuxt-jsonld": "^2.2.1",
     "schema-dts": "^1.1.5",
     "tailwindcss": "^4.1.11",
+    "underscore": "^1.13.7",
     "vue": "^3.5.17",
     "vue-router": "^4.5.1"
   },
   "devDependencies": {
     "@eslint/css": "^0.10.0",
     "@stylistic/eslint-plugin": "^5.2.0",
+    "@types/underscore": "^1.13.0",
     "dotenv": "^17.2.1",
     "globals": "^16.3.0",
     "quicktype": "23.2.6",
