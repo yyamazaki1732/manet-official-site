@@ -11,6 +11,11 @@ export default defineNuxtConfig({
   modules: ['@nuxt/eslint', '@nuxtjs/i18n', '@nuxt/image', 'nuxt-jsonld'],
   components: [
     {
+      path: 'entities/jsonld/',
+      extensions: ['.vue'],
+      prefix: 'JsonLD',
+    },
+    {
       path: 'widgets/layout',
       extensions: ['.vue'],
       prefix: 'Layout',
@@ -43,7 +48,6 @@ export default defineNuxtConfig({
   },
   srcDir: 'src',
   alias: {
-    '@': '../src',
     '#shared': '../src/shared',
   },
   devServer: {
