@@ -13,6 +13,11 @@ useSeoMeta({
   },
   twitterCard: 'summary_large_image',
 })
+useJsonld({
+  '@context': 'https://schema.org',
+  '@type': 'Thing',
+  'name': 'static json',
+})
 </script>
 
 <template>

@@ -29,9 +29,18 @@ importers:
       nuxt:
         specifier: ^4.0.0
         version: 4.0.0(@netlify/blobs@9.1.2)(@parcel/watcher@2.5.1)(@types/node@16.18.126)(@vue/compiler-sfc@3.5.17)(db0@0.3.2)(eslint@9.31.0(jiti@2.4.2))(ioredis@5.6.1)(lightningcss@1.30.1)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.45.1)(terser@5.43.1)(typescript@5.8.3)(vite@7.0.5(@types/node@16.18.126)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.1)(yaml@2.8.0))(yaml@2.8.0)
+      nuxt-jsonld:
+        specifier: ^2.2.1
+        version: 2.2.1
+      schema-dts:
+        specifier: ^1.1.5
+        version: 1.1.5
       tailwindcss:
         specifier: ^4.1.11
         version: 4.1.11
+      underscore:
+        specifier: ^1.13.7
+        version: 1.13.7
       vue:
         specifier: ^3.5.17
         version: 3.5.17(typescript@5.8.3)
@@ -45,6 +54,9 @@ importers:
       '@stylistic/eslint-plugin':
         specifier: ^5.2.0
         version: 5.2.0(eslint@9.31.0(jiti@2.4.2))
+      '@types/underscore':
+        specifier: ^1.13.0
+        version: 1.13.0
       dotenv:
         specifier: ^17.2.1
         version: 17.2.1
@@ -1712,6 +1724,9 @@ packages:
 
   '@types/trusted-types@2.0.7':
     resolution: {integrity: sha512-ScaPdn1dQczgbl0QFTeTOmVHFULt394XJgOQNoyVhZ6r2vLnMLJfBPd53SB52T/3G36VI1/g2MZaX0cwDuXsfw==}
+
+  '@types/underscore@1.13.0':
+    resolution: {integrity: sha512-L6LBgy1f0EFQZ+7uSA57+n2g/s4Qs5r06Vwrwn0/nuK1de+adz00NWaztRQ30aEqw5qOaWbPI8u2cGQ52lj6VA==}
 
   '@types/yauzl@2.10.3':
     resolution: {integrity: sha512-oJoftv0LSuaDZE3Le4DbKX+KS9G36NzOeSap90UIK0yMA/NhKJhqlSGtNDORNRaIbQfzjXDrQa0ytJ6mNRGz/Q==}
@@ -3853,6 +3868,9 @@ packages:
   nuxt-define@1.0.0:
     resolution: {integrity: sha512-CYZ2WjU+KCyCDVzjYUM4eEpMF0rkPmkpiFrybTqqQCRpUbPt2h3snswWIpFPXTi+osRCY6Og0W/XLAQgDL4FfQ==}
 
+  nuxt-jsonld@2.2.1:
+    resolution: {integrity: sha512-V5y8NXr+rICH+JyQl/AThYzDXMpKM/IND0NKy6k/79Q2yU9UP1AmgbNHDesjMXbMHLyPxwMVqUP2q9WpL3/zMw==}
+
   nuxt@4.0.0:
     resolution: {integrity: sha512-HMhAEW59Ws3ty8SUZ0icOPoqP5xMaThZA5h7A7pz1Gl/feW1FwtJZnqjZ/aO/Xv2TlTIbkil2OOolDpJOAQjUg==}
     engines: {node: ^20.19.0 || >=22.12.0}
@@ -4467,6 +4485,9 @@ packages:
   sax@1.4.1:
     resolution: {integrity: sha512-+aWOz7yVScEGoKNd4PA10LZ8sk0A/z5+nXQG5giUO5rprX9jgYsTdov9qCchZiPIZezbZH+jRut8nPodFAX4Jg==}
 
+  schema-dts@1.1.5:
+    resolution: {integrity: sha512-RJr9EaCmsLzBX2NDiO5Z3ux2BVosNZN5jo0gWgsyKvxKIUL5R3swNvoorulAeL9kLB0iTSX7V6aokhla2m7xbg==}
+
   scslre@0.3.0:
     resolution: {integrity: sha512-3A6sD0WYP7+QrjbfNA2FN3FsOaGGFoekCVgTyypy53gPxhbkCIjtO6YWgdrfM+n/8sI8JeXZOIxsHjMTNxQ4nQ==}
     engines: {node: ^14.0.0 || >=16.0.0}
@@ -4868,6 +4889,9 @@ packages:
 
   unctx@2.4.1:
     resolution: {integrity: sha512-AbaYw0Nm4mK4qjhns67C+kgxR2YWiwlDBPzxrN8h8C6VtAdCgditAY5Dezu3IJy4XVqAnbrXt9oQJvsn3fyozg==}
+
+  underscore@1.13.7:
+    resolution: {integrity: sha512-GMXzWtsc57XAtguZgaQViUOzs0KTkk8ojr3/xAxXLITqf/3EMwxC0inyETfDFjH/Krbhuep0HNbbjI9i/q3F3g==}
 
   undici-types@7.8.0:
     resolution: {integrity: sha512-9UJ2xGDvQ43tYyVMpuHlsgApydB8ZKfVYTsLDhXkFL/6gfkp+U8xTGdh8pMJv1SpZna0zxG1DwsKZsreLbXBxw==}
@@ -7086,6 +7110,8 @@ snapshots:
 
   '@types/trusted-types@2.0.7':
     optional: true
+
+  '@types/underscore@1.13.0': {}
 
   '@types/yauzl@2.10.3':
     dependencies:
@@ -9419,6 +9445,11 @@ snapshots:
 
   nuxt-define@1.0.0: {}
 
+  nuxt-jsonld@2.2.1:
+    dependencies:
+      pathe: 1.1.2
+      schema-dts: 1.1.5
+
   nuxt@4.0.0(@netlify/blobs@9.1.2)(@parcel/watcher@2.5.1)(@types/node@16.18.126)(@vue/compiler-sfc@3.5.17)(db0@0.3.2)(eslint@9.31.0(jiti@2.4.2))(ioredis@5.6.1)(lightningcss@1.30.1)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.45.1)(terser@5.43.1)(typescript@5.8.3)(vite@7.0.5(@types/node@16.18.126)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.1)(yaml@2.8.0))(yaml@2.8.0):
     dependencies:
       '@nuxt/cli': 3.26.2(magicast@0.3.5)
@@ -10268,6 +10299,8 @@ snapshots:
 
   sax@1.4.1: {}
 
+  schema-dts@1.1.5: {}
+
   scslre@0.3.0:
     dependencies:
       '@eslint-community/regexpp': 4.12.1
@@ -10707,6 +10740,8 @@ snapshots:
       estree-walker: 3.0.3
       magic-string: 0.30.17
       unplugin: 2.3.5
+
+  underscore@1.13.7: {}
 
   undici-types@7.8.0:
     optional: true

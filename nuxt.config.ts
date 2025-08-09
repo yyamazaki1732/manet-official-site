@@ -8,8 +8,13 @@ const jaFiles = ENDPOINTS.map(e => `ja/${e.key}.json`)
 const enFiles = ENDPOINTS.map(e => `en/${e.key}.json`)
 
 export default defineNuxtConfig({
-  modules: ['@nuxt/eslint', '@nuxtjs/i18n', '@nuxt/image'],
+  modules: ['@nuxt/eslint', '@nuxtjs/i18n', '@nuxt/image', 'nuxt-jsonld'],
   components: [
+    {
+      path: 'entities/jsonld/',
+      extensions: ['.vue'],
+      prefix: 'JsonLD',
+    },
     {
       path: 'widgets/layout',
       extensions: ['.vue'],
@@ -43,7 +48,6 @@ export default defineNuxtConfig({
   },
   srcDir: 'src',
   alias: {
-    '@': '../src',
     '#shared': '../src/shared',
   },
   devServer: {
