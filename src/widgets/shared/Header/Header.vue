@@ -15,7 +15,19 @@ console.log('test', test)
 
 <template>
   <header :class="['header']">
-    <h1>App Header / 'welcome'<br>{{ $t('home.subject') }}<br>{{ $t('about.subject') }}</h1>
+    <h1>App Header</h1>
+    <ul class="flex">
+      <li>
+        <NuxtLinkLocale to="/">
+          Home
+        </NuxtLinkLocale>
+      </li>
+      <li>
+        <NuxtLinkLocale to="/about">
+          About
+        </NuxtLinkLocale>
+      </li>
+    </ul>
     <UiLangSwitcher />
     <button
       :aria-expanded="isMenuOpen"
