@@ -65,6 +65,9 @@ export default defineNuxtConfig({
       stylistic: true,
     },
   },
+  gtag: {
+    id: 'G-XXXXXXXXXX',
+  },
   i18n: {
     compilation: {
       strictMessage: false,
