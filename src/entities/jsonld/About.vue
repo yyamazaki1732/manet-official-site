@@ -40,7 +40,7 @@ const webPage: WebPage = {
     'url': `/assets/img/about-fv-pc.jpg`,
     'width': '2880',
     'height': '1800',
-    'caption': $t('about.image_caption'),
+    'caption': $t('about.subject'),
   },
   'image': [
     {
@@ -50,7 +50,7 @@ const webPage: WebPage = {
       'url': `/assets/img/about-fv-pc.jpg`,
       'width': '2880',
       'height': '1800',
-      'caption': $t('about.image_caption'),
+      'caption': $t('about.subject'),
     },
   ],
 }
@@ -92,3 +92,7 @@ function jsonld(): Graph {
 
 useJsonld(jsonld())
 </script>
+
+<template>
+  <p>s</p>
+</template>
