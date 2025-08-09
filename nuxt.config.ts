@@ -8,7 +8,7 @@ const jaFiles = ENDPOINTS.map(e => `ja/${e.key}.json`)
 const enFiles = ENDPOINTS.map(e => `en/${e.key}.json`)
 
 export default defineNuxtConfig({
-  modules: ['@nuxt/eslint', '@nuxtjs/i18n', '@nuxt/image', 'nuxt-jsonld'],
+  modules: ['@nuxt/eslint', '@nuxtjs/i18n', '@nuxt/image', 'nuxt-jsonld', 'nuxt-gtag'],
   components: [
     {
       path: 'entities/jsonld/',
@@ -85,5 +85,4 @@ export default defineNuxtConfig({
     ],
     defaultLocale: 'ja',
   },
-
 })
