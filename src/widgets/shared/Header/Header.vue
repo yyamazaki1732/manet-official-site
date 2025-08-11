@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import type { Common } from '@/entities/api/model/common'
+import { globalNavItems } from '@/entities/navigation'
 
 const isMenuOpen = ref(false)
 function toggleMenu() {
@@ -15,16 +16,16 @@ console.log('test', test)
 
 <template>
   <header :class="['header']">
-    <h1>App Header</h1>
-    <ul class="flex">
-      <li>
-        <NuxtLinkLocale to="/">
-          Home
-        </NuxtLinkLocale>
-      </li>
-      <li>
-        <NuxtLinkLocale to="/about">
-          About
+    <h1 :class="['title']">
+      Header
+    </h1>
+    <ul :class="['list']">
+      <li
+        v-for="item in globalNavItems"
+        :key="item.name"
+      >
+        <NuxtLinkLocale :to="item.path">
+          {{ $t(`${item.name}.subject`) }}
         </NuxtLinkLocale>
       </li>
     </ul>
@@ -61,3 +62,5 @@ console.log('test', test)
     </Teleport>
   </header>
 </template>
+
+<style src="./Header.css" scoped></style>

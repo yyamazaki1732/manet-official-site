@@ -1,8 +1,31 @@
 .header {
-  background-color: #213141;
-  color: white;
-  padding: 10px;
-  text-align: center;
+  background-color: #334b62;
   border-bottom: 1px solid #dee2e6;
-  min-height: 30px;
+  padding: 40px;
+
+  display: grid;
+  grid-template:
+    "title list hamburger-btn" max-content
+    ". . ." calc(var(--rem) * 24) ". . ." calc(var(--rem) * 56) "lang-switcher lang-switcher lang-switcher" max-content / max-content 1fr max-content;
+}
+
+:where(.header) {
+  .title {
+    grid-area: title;
+  }
+
+  .list {
+    grid-area: list;
+    display: flex;
+    justify-content: center;
+    gap: calc(var(--rem) * 16);
+  }
+
+  & :deep(.lang-switcher) {
+    grid-area: lang-switcher
+  }
+
+  .hamburger-btn {
+    grid-area: hamburger-btn;
+  }
 }
