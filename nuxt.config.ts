@@ -37,7 +37,7 @@ export default defineNuxtConfig({
     ],
   },
   devtools: { enabled: true },
-  css: ['@/app/style/tailwindcss.css'],
+  css: ['@/app/style/base.css', '@/app/style/tailwindcss.css'],
   runtimeConfig: {
     public: {
     },

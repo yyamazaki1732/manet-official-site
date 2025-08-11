@@ -1,0 +1,21 @@
+:root {
+    /* 
+    * design comp 
+    */
+    --comp-w: 375;
+    --comp-h: 812;
+    /* 
+    * units 
+    */
+    --rem: calc(1rem / 16);
+    --em: calc(1em / 16);
+    --vw: min(calc(100vw / var(--comp-w)), 0.0625rem);
+    --vh: calc(100vh / var(--comp-h));
+    --vh: calc(100dvh / var(--comp-h));
+    --lvh: calc(100lvh / var(--comp-h));
+
+    @media (min-width: theme('screens.lg')) {
+        --comp-w: 1440;
+        --comp-h: 810;
+    }
+}
