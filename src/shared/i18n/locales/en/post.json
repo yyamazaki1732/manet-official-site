@@ -1,1 +1,34 @@
-{}
+{
+  "post": {
+    "topics_id": 7,
+    "ymd": "2025-08-11",
+    "contents_type": 19,
+    "subject": "TOPICSページの記事",
+    "topics_flg": 1,
+    "open_flg": 1,
+    "regular_flg": 0,
+    "inst_ymdhi": "2025-08-11T20:11:06+09:00",
+    "update_ymdhi": "2025-08-11T20:11:06+09:00",
+    "topics_group_id": 11,
+    "slug": "2025-0811",
+    "order_no": 0,
+    "col_sort": "[]",
+    "group_nm": "POST",
+    "group_description": "path : \"/news/***\"",
+    "contents_type_cnt": 1,
+    "contents_type_nm": "TOPICS",
+    "contents_type_slug": "topics",
+    "contents_type_parent_nm": null,
+    "category_parent_id": null,
+    "contents_type_ext_col_01": "",
+    "contents_type_ext_col_02": "",
+    "contents_type_ext_col_03": "",
+    "contents_type_ext_col_04": "",
+    "contents_type_ext_col_05": "",
+    "contents_type_list": [
+      19
+    ],
+    "meta_description": "TBD-日本語ページ POST",
+    "content": "<p>TOPICSページの記事 内容です。</p>"
+  }
+}
