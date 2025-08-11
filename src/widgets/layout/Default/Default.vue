@@ -3,6 +3,9 @@ useHead({
   titleTemplate: (titleChunk) => {
     return titleChunk ? `${titleChunk} - ${$t('common.subject')}` : $t('common.subject')
   },
+  bodyAttrs: {
+    class: 'surface-color-secondary text-color-secondary',
+  },
 })
 useSeoMeta({
   ogImage: {
@@ -22,7 +25,7 @@ useJsonld({
 
 <template>
   <WidgetHeader />
-  <main :class="['footer', 'opacity-75']">
+  <main :class="['main', 'opacity-75']">
     <h1>DefaultLayout</h1>
     <slot />
   </main>
