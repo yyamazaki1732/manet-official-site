@@ -17,7 +17,9 @@ console.log('test', test)
 <template>
   <header :class="['header']">
     <h1 :class="['title']">
-      Header
+      <NuxtLinkLocale :to="'/'">
+        Header
+      </NuxtLinkLocale>
     </h1>
     <ul :class="['list']">
       <li

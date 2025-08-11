@@ -5,7 +5,9 @@ import { globalNavItems } from '@/entities/navigation'
 <template>
   <footer :class="['footer', 'opacity-75']">
     <h1 :class="['title']">
-      Footer
+      <NuxtLinkLocale :to="'/'">
+        Footer
+      </NuxtLinkLocale>
     </h1>
     <ul :class="['list']">
       <li
