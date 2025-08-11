@@ -4,8 +4,9 @@
       v-for="locale in locales"
       :key="locale.code"
       :to="switchLocalePath(locale.code)"
+      :class="['link']"
     >
-      <h2> {{ locale.code }}</h2>
+      <p :class="['link-text']"> {{ locale.code }}</p>
     </NuxtLink>
   </div>
 </template>
