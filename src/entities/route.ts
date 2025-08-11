@@ -2,7 +2,7 @@
  * 2階層目のページ名
  */
 export const secondLayerNames = [
-  'top',
+  'home',
   'about',
   'news',
 ] as const
@@ -15,11 +15,11 @@ export const routeNames = [
 export type RouteName = typeof routeNames[number]
 
 export const routes = {
-  top: `/`,
+  home: `/`,
   about: `/about`,
   news: `/news`,
 } satisfies Record<RouteName, string>
 
 type PrefixWithSlash<T extends string> = `/${T}`
-type SecondLayerNamesWithSlash = PrefixWithSlash<Exclude<SecondLayerNames, 'top'>>
+type SecondLayerNamesWithSlash = PrefixWithSlash<Exclude<SecondLayerNames, 'home'>>
 export type AllLayerNamesWithSlash = SecondLayerNamesWithSlash | '/'

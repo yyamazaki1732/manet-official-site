@@ -1,7 +1,29 @@
 .footer {
   background-color: #213141;
   padding: 40px;
-  text-align: center;
   border-top: 1px solid #dee2e6;
-  min-height: 30px;
+
+  display: grid;
+  grid-template:
+    "title" max-content
+    "." calc(var(--rem) * 24) "list" min-content
+    "." calc(var(--rem) * 56) "copyright" max-content
+    / 1fr;
+}
+
+:where(.footer) {
+  .title {
+    grid-area: title;
+  }
+
+  .list {
+    grid-area: list;
+    display: flex;
+    gap: calc(var(--rem) * 16);
+  }
+
+  .copyright {
+    grid-area: copyright;
+    font-size: calc(var(--rem) * 12);
+  }
 }

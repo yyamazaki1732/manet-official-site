@@ -1,3 +1,24 @@
 .lang-switcher {
-    background-color: brown;
+    display: flex;
+    justify-content: center;
+    gap: calc(var(--rem) * 16);
+}
+
+:where(.lang-switcher) {
+    .link {
+        text-decoration: none;
+        background-color: brown;
+        color: inherit;
+        border-radius: 4px;
+        min-width: 32px;
+        height: auto;
+        aspect-ratio: 1/1;
+        display: grid;
+        place-items: center;
+        text-transform: uppercase;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
 }
