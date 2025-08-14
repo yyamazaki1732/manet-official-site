@@ -44,7 +44,7 @@ async function fetchAll(endpoint) {
     console.error('APIレスポンスがJSONではありません:', text)
     throw e
   }
-  const { list, pageInfo } = initialData
+  const { errors, messages, list, pageInfo } = initialData
   const totalPageCnt = pageInfo.totalPageCnt
 
   const promises = []
@@ -69,10 +69,13 @@ async function fetchAll(endpoint) {
   const allData = await Promise.all(promises)
   const allList = allData.map(data => data.list).flat()
 
-  return [
-    ...list,
-    ...allList,
-  ]
+  return {
+    errors,
+    messages,
+    list,
+    pageInfo,
+    allList,
+  }
 }
 
 (async () => {
