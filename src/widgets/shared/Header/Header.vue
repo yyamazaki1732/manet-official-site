@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import type { Common } from '@/entities/api/model/common'
+import type { Common, Post } from '@/entities/api/model'
 import { globalNavItems } from '@/entities/navigation'
 
 const isMenuOpen = ref(false)
@@ -10,8 +10,10 @@ function toggleMenu() {
 
 const { locale, messages } = useI18n()
 const commonObj = messages.value[locale.value]?.common as Common
-const test = commonObj?.topics_id
+const test = commonObj?.list[0]?.inst_ymdhi
 console.log('test', test)
+
+const postObj = messages.value[locale.value]?.post as Post
 </script>
 
 <template>
@@ -27,7 +29,7 @@ console.log('test', test)
         :key="item.name"
       >
         <NuxtLinkLocale :to="item.path">
-          {{ $t(`${item.name}.list.0.subject`) }}
+          {{ postObj.list }}
         </NuxtLinkLocale>
       </li>
     </ul>

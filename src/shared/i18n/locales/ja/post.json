@@ -2,8 +2,8 @@
   "post": {
     "errors": [],
     "messages": [],
-    "list": {
-      "0": {
+    "list": [
+      {
         "topics_id": 11,
         "ymd": "2025-08-14",
         "contents_type": 20,
@@ -35,7 +35,7 @@
         "meta_description": "TBD-日本語ページ POST",
         "content": "<p>TOPICSページの記事 内容です。</p>"
       },
-      "1": {
+      {
         "topics_id": 10,
         "ymd": "2025-08-13",
         "contents_type": 20,
@@ -67,7 +67,7 @@
         "meta_description": "TBD-日本語ページ POST",
         "content": "<p>TOPICSページの記事 内容です。</p>"
       }
-    },
+    ],
     "pageInfo": {
       "totalCnt": 6,
       "perPage": 2,

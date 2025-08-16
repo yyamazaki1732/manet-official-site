@@ -1,0 +1,5 @@
+export * from '@/entities/api/model/common'
+export * from '@/entities/api/model/post'
+export * from '@/entities/api/model/about'
+export * from '@/entities/api/model/home'
+export * from '@/entities/api/model/news'

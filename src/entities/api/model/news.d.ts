@@ -5,6 +5,14 @@ export interface NewsItem {
 }
 
 export interface News {
+    errors:   any[];
+    messages: any[];
+    list:     List[];
+    pageInfo: PageInfo;
+    allList:  any[];
+}
+
+export interface List {
     topics_id:                number;
     ymd:                      Date;
     contents_type:            number;
@@ -32,4 +40,17 @@ export interface News {
     contents_type_ext_col_05: null;
     contents_type_list:       number[];
     meta_description:         string;
+}
+
+export interface PageInfo {
+    totalCnt:     number;
+    perPage:      number;
+    totalPageCnt: number;
+    pageNo:       number;
+    firstIndex:   number;
+    lastIndex:    number;
+    path:         string;
+    param:        string;
+    startPageNo:  number;
+    endPageNo:    number;
 }

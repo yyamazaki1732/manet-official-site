@@ -5,6 +5,14 @@ export interface HomeItem {
 }
 
 export interface Home {
+    errors:   any[];
+    messages: any[];
+    list:     List[];
+    pageInfo: PageInfo;
+    allList:  any[];
+}
+
+export interface List {
     topics_id:                number;
     ymd:                      Date;
     contents_type:            number;
@@ -43,4 +51,17 @@ export interface Img {
     url_org: string;
     desc:    string;
     credit:  string;
+}
+
+export interface PageInfo {
+    totalCnt:     number;
+    perPage:      number;
+    totalPageCnt: number;
+    pageNo:       number;
+    firstIndex:   number;
+    lastIndex:    number;
+    path:         string;
+    param:        string;
+    startPageNo:  number;
+    endPageNo:    number;
 }

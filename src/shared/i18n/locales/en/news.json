@@ -2,8 +2,8 @@
   "news": {
     "errors": [],
     "messages": [],
-    "list": {
-      "0": {
+    "list": [
+      {
         "topics_id": 6,
         "ymd": "1970-01-01",
         "contents_type": 18,
@@ -34,7 +34,7 @@
         ],
         "meta_description": "TBD-英語ページ NEWS"
       }
-    },
+    ],
     "pageInfo": {
       "totalCnt": 1,
       "perPage": 20,

@@ -2,8 +2,8 @@
   "home": {
     "errors": [],
     "messages": [],
-    "list": {
-      "0": {
+    "list": [
+      {
         "topics_id": 3,
         "ymd": "1970-01-01",
         "contents_type": 15,
@@ -43,7 +43,7 @@
         "wysiwyg": "<p>ABCD<br>EFGH</p><p>IJKL</p>",
         "html": "<section>\r\n                    <p>test</p>\r\n                </section>"
       }
-    },
+    ],
     "pageInfo": {
       "totalCnt": 1,
       "perPage": 20,

@@ -2,8 +2,8 @@
   "common": {
     "errors": [],
     "messages": [],
-    "list": {
-      "0": {
+    "list": [
+      {
         "topics_id": 5,
         "ymd": "1970-01-01",
         "contents_type": 17,
@@ -39,7 +39,7 @@
           "credit": ""
         }
       }
-    },
+    ],
     "pageInfo": {
       "totalCnt": 1,
       "perPage": 20,

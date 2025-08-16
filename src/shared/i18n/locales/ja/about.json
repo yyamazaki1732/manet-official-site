@@ -2,8 +2,8 @@
   "about": {
     "errors": [],
     "messages": [],
-    "list": {
-      "0": {
+    "list": [
+      {
         "topics_id": 4,
         "ymd": "1970-01-01",
         "contents_type": 16,
@@ -35,7 +35,7 @@
         "tagline": "タグライン",
         "meta_description": "TBD-日本語ページ ABOUT"
       }
-    },
+    ],
     "pageInfo": {
       "totalCnt": 1,
       "perPage": 20,
