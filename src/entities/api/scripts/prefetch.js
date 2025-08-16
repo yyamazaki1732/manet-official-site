@@ -72,9 +72,11 @@ async function fetchAll(endpoint) {
   return {
     errors,
     messages,
-    list,
+    list: [
+      ...list,
+      ...allList,
+    ],
     pageInfo,
-    allList,
   }
 }
 

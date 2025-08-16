@@ -46,7 +46,6 @@
       "param": "?data_format=json",
       "startPageNo": 1,
       "endPageNo": 1
-    },
-    "allList": []
+    }
   }
 }

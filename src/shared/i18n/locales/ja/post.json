@@ -66,21 +66,7 @@
         ],
         "meta_description": "TBD-日本語ページ POST",
         "content": "<p>TOPICSページの記事 内容です。</p>"
-      }
-    ],
-    "pageInfo": {
-      "totalCnt": 6,
-      "perPage": 2,
-      "totalPageCnt": 3,
-      "pageNo": 1,
-      "firstIndex": 1,
-      "lastIndex": 2,
-      "path": "/rcms-api/3/post",
-      "param": "?data_format=json",
-      "startPageNo": 1,
-      "endPageNo": 3
-    },
-    "allList": [
+      },
       {
         "topics_id": 9,
         "ymd": "2025-08-12",
@@ -209,6 +195,18 @@
         "meta_description": "TBD-日本語ページ POST",
         "content": "<p>TOPICSページの記事 内容です。</p>"
       }
-    ]
+    ],
+    "pageInfo": {
+      "totalCnt": 6,
+      "perPage": 2,
+      "totalPageCnt": 3,
+      "pageNo": 1,
+      "firstIndex": 1,
+      "lastIndex": 2,
+      "path": "/rcms-api/3/post",
+      "param": "?data_format=json",
+      "startPageNo": 1,
+      "endPageNo": 3
+    }
   }
 }
