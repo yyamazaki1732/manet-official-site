@@ -15,7 +15,7 @@ import { globalNavItems } from '@/entities/navigation'
         :key="item.name"
       >
         <NuxtLinkLocale :to="item.path">
-          {{ $t(`${item.name}.subject`) }}
+          {{ $t(`${item.name}.list.0.subject`) }}
         </NuxtLinkLocale>
       </li>
     </ul>

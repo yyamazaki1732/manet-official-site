@@ -10,13 +10,13 @@ const breadcrumbs: BreadcrumbList = {
     {
       '@type': 'ListItem',
       'position': 1,
-      'name': $t('home.subject'),
+      'name': $t('home.list.0.subject'),
       'item': { '@id': 'https://ochanomizu.cc/' },
     },
     {
       '@type': 'ListItem',
       'position': 2,
-      'name': $t('about.subject'),
+      'name': $t('about.list.0.subject'),
       'item': { '@id': 'https://ochanomizu.cc/about/' },
     },
   ],
@@ -27,8 +27,8 @@ const webPage: WebPage = {
   '@type': 'WebPage',
   '@id': 'https://ochanomizu.cc/about/#webpage',
   'url': 'https://ochanomizu.cc/about/',
-  'name': $t('about.subject'),
-  'description': $t('about.meta_description'),
+  'name': $t('about.list.0.subject'),
+  'description': $t('about.list.0.meta_description'),
   'isPartOf': { '@id': 'https://ochanomizu.cc/#website' },
   'breadcrumb': { '@id': 'https://ochanomizu.cc/about/#breadcrumb' },
   'about': { '@id': 'https://ochanomizu.cc/#brand' },
@@ -40,7 +40,7 @@ const webPage: WebPage = {
     'url': `/assets/img/about-fv-pc.jpg`,
     'width': '2880',
     'height': '1800',
-    'caption': $t('about.subject'),
+    'caption': $t('about.list.0.subject'),
   },
   'image': [
     {
@@ -50,7 +50,7 @@ const webPage: WebPage = {
       'url': `/assets/img/about-fv-pc.jpg`,
       'width': '2880',
       'height': '1800',
-      'caption': $t('about.subject'),
+      'caption': $t('about.list.0.subject'),
     },
   ],
 }

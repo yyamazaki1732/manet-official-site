@@ -12,10 +12,10 @@ const { sanitize } = useSanitize()
       'data-my-data': 'my-value',
     }"
     format="webp"
-    :src="$t('home.img.url')"
+    :src="$t('home.list.0.img.url')"
     alt="image"
     width="400"
     height="400"
   />
-  <div v-html="sanitize($t('home.wysiwyg'))" />
+  <div v-html="sanitize($t('home.list.0.wysiwyg'))" />
 </template>

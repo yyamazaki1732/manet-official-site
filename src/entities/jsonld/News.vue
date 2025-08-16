@@ -10,13 +10,13 @@ const breadcrumbs: BreadcrumbList = {
     {
       '@type': 'ListItem',
       'position': 1,
-      'name': $t('home.subject'),
+      'name': $t('home.list.0.subject'),
       'item': { '@id': 'https://ochanomizu.cc/' },
     },
     {
       '@type': 'ListItem',
       'position': 2,
-      'name': $t('news.subject'),
+      'name': $t('news.list.0.subject'),
       'item': { '@id': 'https://ochanomizu.cc/news/' },
     },
   ],
@@ -27,8 +27,8 @@ const webPage: WebPage = {
   '@type': 'WebPage',
   '@id': 'https://ochanomizu.cc/news/#webpage',
   'url': 'https://ochanomizu.cc/news/',
-  'name': $t('news.subject'),
-  'description': $t('news.meta_description'),
+  'name': $t('news.list.0.subject'),
+  'description': $t('news.list.0.meta_description'),
   'isPartOf': { '@id': 'https://ochanomizu.cc/#website' },
   'breadcrumb': { '@id': 'https://ochanomizu.cc/news/#breadcrumb' },
   'about': { '@id': 'https://ochanomizu.cc/#brand' },
@@ -40,7 +40,7 @@ const webPage: WebPage = {
     'url': `/assets/img/news-fv-pc.jpg`,
     'width': '2880',
     'height': '1800',
-    'caption': $t('news.subject'),
+    'caption': $t('news.list.0.subject'),
   },
   'image': [
     {
@@ -50,7 +50,7 @@ const webPage: WebPage = {
       'url': `/assets/img/news-fv-pc.jpg`,
       'width': '2880',
       'height': '1800',
-      'caption': $t('news.subject'),
+      'caption': $t('news.list.0.subject'),
     },
   ],
 }

@@ -6,8 +6,6 @@ const isMenuOpen = ref(false)
 function toggleMenu() {
   isMenuOpen.value = !isMenuOpen.value
 }
-
-const { locale } = useI18n()
 </script>
 
 <template>
@@ -23,7 +21,7 @@ const { locale } = useI18n()
         :key="item.name"
       >
         <NuxtLinkLocale :to="item.path">
-          {{ locale }}
+          {{ $t(`${item.name}.list.0.subject`) }}
         </NuxtLinkLocale>
       </li>
     </ul>
@@ -53,8 +51,16 @@ const { locale } = useI18n()
           ×
         </button>
         <ul>
-          <li><NuxtLink to="/">Home</NuxtLink></li>
-          <li><NuxtLink to="/about">About</NuxtLink></li>
+          <ul :class="['list']">
+            <li
+              v-for="item in globalNavItems"
+              :key="item.name"
+            >
+              <NuxtLinkLocale :to="item.path">
+                {{ $t(`${item.name}.list.0.subject`) }}
+              </NuxtLinkLocale>
+            </li>
+          </ul>
         </ul>
       </nav>
     </Teleport>

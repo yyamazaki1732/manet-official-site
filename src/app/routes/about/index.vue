@@ -2,10 +2,10 @@
 import Page from '@/pages/about/index.vue'
 
 useSeoMeta({
-  title: $t('about.subject'),
-  ogTitle: $t('about.subject'),
-  description: $t('about.meta_description'),
-  ogDescription: $t('about.meta_description'),
+  title: $t('about.list.0.subject'),
+  ogTitle: $t('about.list.0.subject'),
+  description: $t('about.list.0.meta_description'),
+  ogDescription: $t('about.list.0.meta_description'),
 })
 </script>
 

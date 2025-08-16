@@ -1,7 +1,7 @@
 <script setup lang="ts">
 useHead({
   titleTemplate: (titleChunk) => {
-    return titleChunk ? `${titleChunk} - ${$t('common.subject')}` : $t('common.subject')
+    return titleChunk ? `${titleChunk} - ${$t('common.list.0.subject')}` : $t('common.list.0.subject')
   },
   bodyAttrs: {
     class: 'surface-color-secondary text-color-secondary',
@@ -9,7 +9,7 @@ useHead({
 })
 useSeoMeta({
   ogImage: {
-    url: $t('common.ogp.url'),
+    url: $t('common.list.0.ogp.url'),
     width: '1200',
     height: '630',
     alt: 'alt',
