@@ -1,19 +1,20 @@
 <template>
   <div class="lang-switcher">
-    <NuxtLink
+    <SwitchLocalePathLink
       v-for="locale in locales"
       :key="locale.code"
-      :to="switchLocalePath(locale.code)"
+      :locale="locale.code"
       :class="['link']"
     >
-      <p :class="['link-text']"> {{ locale.code }}</p>
-    </NuxtLink>
+      <p :class="['link-text']">
+        {{ locale.code }}
+      </p>
+    </SwitchLocalePathLink>
   </div>
 </template>
 
 <script setup lang="ts">
 const { locales } = useI18n()
-const switchLocalePath = useSwitchLocalePath()
 </script>
 
 <style src="./LangSwitcher.css" scoped> </style>
