@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import jaPostFiles from '@/shared/i18n/locales/ja/post.json'
 
-import { ref, computed } from 'vue'
+import { computed } from 'vue'
+import { useRoute } from 'vue-router'
 
 const totalCnt = jaPostFiles.post.pageInfo.totalCnt
 const perPage = jaPostFiles.post.pageInfo.perPage
@@ -11,17 +12,15 @@ const lastIndex = jaPostFiles.post.pageInfo.lastIndex
 const startPageNo = jaPostFiles.post.pageInfo.startPageNo
 const endPageNo = jaPostFiles.post.pageInfo.endPageNo
 
-const currentPage = ref(1)
+const route = useRoute()
+const currentPage = computed(() => {
+  const page = Number(route.query.page)
+  return !isNaN(page) && page >= 1 ? page : 1
+})
 
 const startIndex = computed(() => (currentPage.value - 1) * perPage)
 const endIndex = computed(() => Math.min(startIndex.value + perPage, totalCnt))
 const pageIndexes = computed(() => Array.from({ length: endIndex.value - startIndex.value }, (_, i) => startIndex.value + i))
-
-function goPage(page: number) {
-  if (page >= 1 && page <= totalPageCnt) {
-    currentPage.value = page
-  }
-}
 </script>
 
 <template>
@@ -45,32 +44,33 @@ function goPage(page: number) {
         <NuxtLinkLocale :to="`/news/${$t(`post.list.${index}.slug`)}`">
           {{ $t(`post.list.${index}.subject`) }}
           {{ $t(`post.list.${index}.content`) }}
+          {{ $t(`post.list.${index}.meta_description`) }}
         </NuxtLinkLocale>
       </li>
     </ul>
 
     <!-- ページネーション -->
     <nav class="flex gap-2 mt-6">
-      <button
-        :disabled="currentPage === 1"
-        @click="goPage(currentPage - 1)"
+      <NuxtLinkLocale
+        v-if="currentPage > 1"
+        :to="`/news?page=${currentPage - 1}`"
       >
         前へ
-      </button>
-      <button
+      </NuxtLinkLocale>
+      <NuxtLinkLocale
         v-for="page in totalPageCnt"
         :key="page"
+        :to="`/news?page=${page}`"
         :class="{ 'font-bold': page === currentPage }"
-        @click="goPage(page)"
       >
         {{ page }}
-      </button>
-      <button
-        :disabled="currentPage === totalPageCnt"
-        @click="goPage(currentPage + 1)"
+      </NuxtLinkLocale>
+      <NuxtLinkLocale
+        v-if="currentPage < totalPageCnt"
+        :to="`/news?page=${currentPage + 1}`"
       >
         次へ
-      </button>
+      </NuxtLinkLocale>
     </nav>
   </div>
 </template>``
