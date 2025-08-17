@@ -40,6 +40,8 @@ export default defineNuxtConfig({
   css: ['@/app/style/base.css', '@/app/style/tailwindcss.css'],
   runtimeConfig: {
     public: {
+      apiBaseURL: 'https://manet.g.kuroco.app',
+      staticToken: '0c459601f46025f5ff46e57bb7605933065de5b0a31e7abd6509a448856d9229',
     },
   },
   dir: {
