@@ -47,8 +47,7 @@ const pageIndexes = computed(() => Array.from({ length: endIndex.value - startIn
             {{ $t(`post.list.${index}.slug`) }}
           </h2>
           <p class="w-full">
-            {{ $t(`post.list.${index}.subject`) }}
-            {{ $t(`post.list.${index}.content`) }}
+            {{ $t(`post.list.${index}.contents_type_slug`) }}
             {{ $t(`post.list.${index}.meta_description`) }}
           </p>
         </NuxtLinkLocale>

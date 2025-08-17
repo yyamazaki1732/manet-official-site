@@ -42,7 +42,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       apiBaseURL: 'https://manet.g.kuroco.app',
-      staticToken: '0c459601f46025f5ff46e57bb7605933065de5b0a31e7abd6509a448856d9229',
+      PostDetailsStaticToken: '4aa06a43138a68e6c2d835b44954db0da0ca33523a0b6906912184804bbe79fe',
     },
   },
   dir: {

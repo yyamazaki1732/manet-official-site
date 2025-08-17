@@ -12,10 +12,10 @@ const { locale } = useI18n()
 const config = useRuntimeConfig()
 
 const { data: response, status, error } = await useFetch<PostDetails>(
-  () => `${config.public.apiBaseURL}/rcms-api/3/post-details/${props.slug}?_lang=${locale.value}`,
+  () => `${config.public.apiBaseURL}/rcms-api/4/post-details/${props.slug}?_lang=${locale.value}`,
   {
     headers: {
-      'x-rcms-api-access-token': `${config.public.staticToken}`,
+      'x-rcms-api-access-token': `${config.public.PostDetailsStaticToken}`,
     },
   },
 )
