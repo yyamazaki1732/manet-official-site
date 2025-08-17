@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Page from '@/pages/about/index.vue'
+import Page from '@/pages/news/index.vue'
 
 useSeoMeta({
   title: $t('news.list.0.subject'),
