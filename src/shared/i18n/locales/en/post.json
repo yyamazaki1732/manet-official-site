@@ -32,7 +32,7 @@
         "contents_type_list": [
           20
         ],
-        "meta_description": "TBD-日本語ページ POST",
+        "meta_description": "TBD-英語ページ POST",
         "content": "<p>TOPICSページの記事 内容です。</p>"
       },
       {
@@ -64,7 +64,7 @@
         "contents_type_list": [
           20
         ],
-        "meta_description": "TBD-日本語ページ POST",
+        "meta_description": "TBD-英語ページ POST",
         "content": "<p>TOPICSページの記事 内容です。</p>"
       },
       {
@@ -96,7 +96,7 @@
         "contents_type_list": [
           19
         ],
-        "meta_description": "TBD-日本語ページ POST",
+        "meta_description": "TBD-英語ページ POST",
         "content": "<p>TOPICSページの記事 内容です。</p>"
       },
       {
@@ -128,7 +128,7 @@
         "contents_type_list": [
           19
         ],
-        "meta_description": "TBD-日本語ページ POST",
+        "meta_description": "TBD-英語ページ POST",
         "content": "<p>TOPICSページの記事 内容です。</p>"
       },
       {
@@ -160,7 +160,7 @@
         "contents_type_list": [
           20
         ],
-        "meta_description": "TBD-日本語ページ EVENT",
+        "meta_description": "TBD-英語ページ EVENT",
         "content": "<p>2025-0810</p>"
       },
       {
@@ -172,7 +172,7 @@
         "open_flg": 1,
         "regular_flg": 0,
         "inst_ymdhi": "2025-08-14T21:49:54+09:00",
-        "update_ymdhi": "2025-08-14T21:49:54+09:00",
+        "update_ymdhi": "2025-08-17T17:28:04+09:00",
         "topics_group_id": 11,
         "slug": "2025-0809",
         "order_no": 0,
@@ -192,7 +192,7 @@
         "contents_type_list": [
           19
         ],
-        "meta_description": "TBD-日本語ページ POST",
+        "meta_description": "TBD-英語ページ POST",
         "content": "<p>TOPICSページの記事 内容です。</p>"
       }
     ],
