@@ -9,7 +9,6 @@ export interface Post {
     messages: any[];
     list:     List[];
     pageInfo: PageInfo;
-    allList:  List[];
 }
 
 export interface List {

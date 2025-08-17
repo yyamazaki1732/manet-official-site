@@ -9,7 +9,6 @@ export interface Home {
     messages: any[];
     list:     List[];
     pageInfo: PageInfo;
-    allList:  any[];
 }
 
 export interface List {
