@@ -28,12 +28,28 @@ const selectedCategory = computed(() => {
   return 'all'
 })
 onMounted(() => {
-  // pageパラメータが無い場合は?page=1にリダイレクト
-  if (!('page' in route.query)) {
+  const hasCategory = 'category' in route.query
+  const hasPage = 'page' in route.query
+  if (!hasCategory && !hasPage) {
     router.replace({
       path: route.path,
-      query: { ...route.query, page: 1 },
+      query: { ...route.query, category: 'all', page: 1 },
     })
+    return
+  }
+  if (!hasCategory && hasPage) {
+    router.replace({
+      path: route.path,
+      query: { ...route.query, category: 'all', page: 1 },
+    })
+    return
+  }
+  if (hasCategory && !hasPage) {
+    router.replace({
+      path: route.path,
+      query: { ...route.query, category: route.query.category, page: 1 },
+    })
+    return
   }
 })
 
@@ -92,21 +108,21 @@ const pageList = computed(() => postData.value.list.slice(startIndex.value, endI
     <nav class="flex gap-2 mt-6 justify-center">
       <NuxtLinkLocale
         v-if="currentPage > 1"
-        :to="`/news?page=${currentPage - 1}`"
+        :to="`/news?page=${currentPage - 1}&category=${route.query.category}`"
       >
         前へ
       </NuxtLinkLocale>
       <NuxtLinkLocale
         v-for="page in totalPageCnt"
         :key="page"
-        :to="`/news?page=${page}`"
+        :to="`/news?page=${page}&category=${route.query.category}`"
         :class="{ 'font-bold': page === currentPage }"
       >
         {{ page }}
       </NuxtLinkLocale>
       <NuxtLinkLocale
         v-if="currentPage < totalPageCnt"
-        :to="`/news?page=${currentPage + 1}`"
+        :to="`/news?page=${currentPage + 1}&category=${route.query.category}`"
       >
         次へ
       </NuxtLinkLocale>
