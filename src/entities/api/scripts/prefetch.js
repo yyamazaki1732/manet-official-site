@@ -124,7 +124,7 @@ async function fetchAll(endpoint) {
             endPageNo: totalPageCnt,
           }
           const postData = {
-            [key]: {
+            [key + '_' + slug]: {
               ...i18nData[key],
               list: catList,
               pageInfo,
