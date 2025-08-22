@@ -51,12 +51,14 @@ const pageList = computed(() => postData.value.list.slice(startIndex.value, endI
 </script>
 
 <template>
-  <div class="surface-color-quaternary p-4">
+  <div class="surface-color-quaternary p-4 flex flex-col justify-center">
     <h1>
       selectedCategoryKey | {{ selectedCategoryKey }}
+
+      {{ $t(`post_event.list.0.subject`) }}
     </h1>
     <!-- カテゴリーセレクター -->
-    <div class="mb-4 flex gap-2">
+    <div class="mb-4 flex justify-center gap-2">
       <button
         v-for="cat in categoryOptions"
         :key="cat.value"
@@ -66,29 +68,28 @@ const pageList = computed(() => postData.value.list.slice(startIndex.value, endI
         {{ cat.label }}
       </button>
     </div>
-    <ul class="flex gap-4">
+    <ul class="flex gap-4 justify-center">
       <li
-        v-for="(_, index) in pageList"
-        :key="index"
+        v-for="(_, i) in pageList"
+        :key="i + startIndex"
         class="w-max"
       >
         <NuxtLinkLocale
-          :to="`/news/${$t(`${selectedCategoryKey}.list.${index}.slug`)}`"
+          :to="`/news/${$t(`${selectedCategoryKey}.list.${i + startIndex}.slug`)}`"
           class="w-[300px] block"
         >
           <h2 class="thumbs w-[300px] h-[200px] p-2 surface-color-tertiary text-color-primary grid place-items-center">
-            {{ $t(`${selectedCategoryKey}.list.${index}.slug`) }}
+            {{ $t(`${selectedCategoryKey}.list.${i + startIndex}.slug`) }}
           </h2>
           <p class="w-full">
-            {{ $t(`${selectedCategoryKey}.list.${index}.contents_type_slug`) }}
-            {{ $t(`${selectedCategoryKey}.list.${index}.meta_description`) }}
+            {{ $t(`${selectedCategoryKey}.list.${i + startIndex}.contents_type_nm`) }}
           </p>
         </NuxtLinkLocale>
       </li>
     </ul>
 
     <!-- ページネーション -->
-    <nav class="flex gap-2 mt-6">
+    <nav class="flex gap-2 mt-6 justify-center">
       <NuxtLinkLocale
         v-if="currentPage > 1"
         :to="`/news?page=${currentPage - 1}`"
