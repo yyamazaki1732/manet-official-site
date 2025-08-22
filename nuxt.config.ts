@@ -82,12 +82,20 @@ export default defineNuxtConfig({
       {
         code: 'ja',
         language: 'ja-JP',
-        files: jaFiles,
+        files: [
+          ...jaFiles,
+          'ja/post-event.json',
+          'ja/post-topics.json',
+        ],
       },
       {
         code: 'en',
         language: 'en-US',
-        files: enFiles,
+        files: [
+          ...enFiles,
+          'en/post-event.json',
+          'en/post-topics.json',
+        ],
       },
     ],
     defaultLocale: 'ja',
