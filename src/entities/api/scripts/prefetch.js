@@ -86,6 +86,9 @@ async function fetchAll(endpoint) {
   for (const lang of LANGS) {
     const EXPORT_PATH = await createExportPath(lang)
     for (const { endpoint, key } of ENDPOINTS) {
+      if (!endpoint) {
+        continue
+      }
       const data = await fetchAll(`${endpoint}?_lang=${lang}`)
       const i18nData = { [key]: Array.isArray(data) ? data[0] : data }
       // 通常のjson出力
