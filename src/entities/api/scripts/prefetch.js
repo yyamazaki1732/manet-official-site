@@ -85,11 +85,8 @@ async function fetchAll(endpoint) {
 
   for (const lang of LANGS) {
     const EXPORT_PATH = await createExportPath(lang)
-    for (const { endpoint, key } of ENDPOINTS) {
-      if (!endpoint) {
-        continue
-      }
-      const data = await fetchAll(`${endpoint}?_lang=${lang}`)
+    for (const { slug, endpoint, key } of ENDPOINTS) {
+      const data = await fetchAll(`/rcms-api/3/${slug}?_lang=${lang}${endpoint ? `&${endpoint}` : ''}`)
       const i18nData = { [key]: Array.isArray(data) ? data[0] : data }
       // 通常のjson出力
       const fileName = `${key}.json`
@@ -100,51 +97,7 @@ async function fetchAll(endpoint) {
         'utf-8',
       )
       console.log(`データを保存しました: ${filePath}`)
-
-      // postの場合はcontents_type_slugごとに分割jsonも出力
-      if (endpoint.includes('/post')) {
-        const list = i18nData[key].list || []
-        // slugごとにグループ化
-        const group = {}
-        for (const item of list) {
-          const slug = item.contents_type_slug || 'unknown'
-          if (!group[slug]) group[slug] = []
-          group[slug].push(item)
-        }
-        for (const slug in group) {
-          const catList = group[slug]
-          const totalCnt = catList.length
-          const perPage = i18nData[key].pageInfo.perPage
-          const totalPageCnt = Math.ceil(totalCnt / perPage)
-          const pageInfo = {
-            ...i18nData[key].pageInfo,
-            totalCnt,
-            totalPageCnt,
-            firstIndex: 1,
-            lastIndex: Math.min(perPage, totalCnt),
-            pageNo: 1,
-            startPageNo: 1,
-            endPageNo: totalPageCnt,
-          }
-          const postData = {
-            [key + '_' + slug]: {
-              ...i18nData[key],
-              list: catList,
-              pageInfo,
-            },
-          }
-          const postFileName = `${key}-${slug}.json`
-          const postFilePath = path.join(EXPORT_PATH, postFileName)
-          await fs.writeFile(
-            postFilePath,
-            JSON.stringify(postData, null, 2),
-            'utf-8',
-          )
-          console.log(`カテゴリ別データを保存しました: ${postFilePath}`)
-        }
-      }
     }
   }
-
   console.log('全てのデータのプリフェッチが完了しました')
 })()

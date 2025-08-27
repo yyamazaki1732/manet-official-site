@@ -1,5 +1,5 @@
 {
-  "post_topics": {
+  "post-topics": {
     "errors": [],
     "messages": [],
     "list": [
@@ -108,7 +108,7 @@
       "firstIndex": 1,
       "lastIndex": 3,
       "path": "/rcms-api/3/post",
-      "param": "?data_format=json",
+      "param": "?contents_type%5B0%5D=topics&data_format=json",
       "startPageNo": 1,
       "endPageNo": 1
     }
