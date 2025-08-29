@@ -52,10 +52,8 @@ jobs:
 
       - name: Prepare (postinstall) data
         run: pnpm run postinstall
-      - name: Prefetch data
-        run: pnpm run prefetch        
       - name: Generate
-        run: pnpm run generate
+        run: pnpm run prefetch && pnpm run generate
       - name: Zip artifact for upload
         run: cd ./.output/public && zip ../../dist.zip . -r
       - name: Archive Production Artifact
@@ -101,10 +99,8 @@ jobs:
 
       - name: Prepare (postinstall) data
         run: pnpm run postinstall
-      - name: Prefetch data
-        run: pnpm run prefetch
       - name: Generate
-        run: pnpm run generate
+        run: pnpm run prefetch && pnpm run generate
       - name: Zip artifact for upload
         run: cd ./.output/public && zip ../../dist.zip . -r
       - name: Archive Production Artifact
