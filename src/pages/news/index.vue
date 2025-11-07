@@ -72,7 +72,9 @@ const pageIndexes = computed(() => Array.from({ length: endIndex.value - startIn
         :class="[cat.value === selectedCategory ? 'font-bold underline' : '', 'px-2 py-1 border rounded']"
         @click="router.replace({ path: route.path, query: { ...route.query, category: cat.value, page: 1 } })"
       >
-        {{ cat.label }}
+        {{ cat.label }} <br>
+        {{ fileName }} <br>
+        {{ $t(`${fileName}.list.0.content`) }}
       </button>
     </div>
     <ul class="flex justify-center gap-4">
@@ -89,9 +91,10 @@ const pageIndexes = computed(() => Array.from({ length: endIndex.value - startIn
             {{ $t(`${fileName}.list.${index}.slug`) }}
           </h2>
           <p class="w-full">
-            {{ $t(`${fileName}.list.${index}.contents_type_nm`) }}
-            {{ $t(`${fileName}.list.${index}.subject`) }}
-            {{ $t(`${fileName}.list.${index}.content`) }}
+            {{ index }}<br>
+            {{ $t(`${fileName}.list.${index}.contents_type_nm`) }}<br>
+            {{ $t(`${fileName}.list.${index}.subject`) }}<br>
+            {{ $t(`${fileName}.list.${index}.content`) }}<br>
             {{ $t(`${fileName}.list.${index}.meta_description`) }}
           </p>
         </NuxtLinkLocale>
