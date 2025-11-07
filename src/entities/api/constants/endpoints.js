@@ -3,7 +3,7 @@ export const ENDPOINTS = [
   { slug: 'about', endpoint: undefined, key: 'about' },
   { slug: 'news', endpoint: undefined, key: 'news' },
   { slug: 'post', endpoint: undefined, key: 'post' },
-  { slug: 'post', endpoint: 'contents_type%5B%5D=topics', key: 'post-topics' },
-  { slug: 'post', endpoint: 'contents_type%5B%5D=event', key: 'post-event' },
+  { slug: 'post-topics', endpoint: undefined, key: 'post-topics' },
+  { slug: 'post-event', endpoint: undefined, key: 'post-event' },
   { slug: 'common', endpoint: undefined, key: 'common' },
 ]
